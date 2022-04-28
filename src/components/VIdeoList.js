@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import VideoDetails from "./VideoDetails";
+import VideoItem from "./VideoItem";
 
 export default class VideoList extends React.Component {
    constructor(props) {
@@ -10,7 +10,7 @@ export default class VideoList extends React.Component {
 
    listRender = () => {
       return this.props.data.map((val) => {
-         return <VideoDetails data={val} />;
+         return <VideoItem func={this.props.videoIdFunc} key={val.id.videoId} data={val} />;
       });
    };
 

@@ -3,11 +3,20 @@ import "./style.css";
 import axios from "axios";
 import Search from "./Search";
 import VideoList from "./VIdeoList";
+import VideoDetail from "./VideoDetail";
 
 export default class App extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { dataArr: [] };
+      this.state = { dataArr: [], videoID: "" };
+   }
+
+   getVideoId = (id) => {
+      this.setState({ videoID: id });
+   };
+
+   componentDidUpdate() {
+      console.log(this.state.videoID);
    }
 
    getData = async (inputVal) => {
@@ -24,11 +33,22 @@ export default class App extends React.Component {
       this.setState({ dataArr: data.data.items });
    };
 
+   showVideo = () => {
+      if (this.state.videoID) {
+         return <VideoDetail videoId={this.state.videoID} />;
+      }
+   };
+
    render() {
       return (
          <div>
             <Search getSearchVal={this.getData} />
-            <VideoList data={this.state.dataArr} />
+
+            {this.showVideo()}
+            <VideoList
+               data={this.state.dataArr}
+               videoIdFunc={this.getVideoId}
+            />
          </div>
       );
    }
