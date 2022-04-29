@@ -16,14 +16,14 @@ export default class VideoItem extends React.Component {
       let snip = this.props.data.snippet;
       return (
          <div onClick={this.getIdClick} className="item">
-            <img className="videoImg" src={snip.thumbnails.default.url} />
-            <div>
+            <img className="videoImg" src={snip.thumbnails.medium.url} />
+            <div className="videoText">
                <img className="channelLogo" src="" />
-               <div>
+               <div className="videoText-right">
                   <a className="videoTitle">{snip.title}</a>
-                  <div>
+                  <div className="channelnameStat">
                      <p className="channelName">{snip.channelTitle}</p>
-                     {/* <p className="views">1000 views</p> */}
+                     <p className="views">1000 views</p>
                      <p className="uploadTime">{snip.publishTime}</p>
                   </div>
                </div>

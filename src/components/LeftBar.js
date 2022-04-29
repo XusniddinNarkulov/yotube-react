@@ -5,25 +5,25 @@ export default class LeftBar extends Component {
    render() {
       return (
          <div className="left-bar">
-            <i class="bars icon"></i>
+            <i className="bars icon"></i>
             <div className="child">
-               <i class="home icon"></i>
+               <i className="home icon"></i>
                <b>Home</b>
             </div>
             <div className="child">
-               <i class="compass outline icon"></i>
+               <i className="compass outline icon"></i>
                <b>Explore</b>
             </div>
             <div className="child">
-               <i class="youtube icon"></i>
+               <i className="youtube icon"></i>
                <b>Shorts</b>
             </div>
             <div className="child">
-               <i class="youtube icon"></i>
+               <i className="youtube icon"></i>
                <b>Subscriptions</b>
             </div>
             <div className="child">
-               <i class="youtube icon"></i>
+               <i className="youtube icon"></i>
                <b>Library</b>
             </div>
          </div>

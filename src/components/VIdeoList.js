@@ -1,6 +1,7 @@
 import React from "react";
 // import "./VideoList.css";
 import VideoItem from "./VideoItem";
+import "./VideoList.css";
 
 export default class VideoList extends React.Component {
    constructor(props) {

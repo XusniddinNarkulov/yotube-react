@@ -8,18 +8,30 @@ export default class VideoDetail extends React.Component {
    }
 
    render() {
-      return (
-         <div>
-            <iframe
-               width="560"
-               height="315"
-               src={"https://www.youtube.com/embed/" + this.props.videoId}
-               title="YouTube video player"
-               frameborder="0"
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-               allowfullscreen
-            ></iframe>
-         </div>
-      );
+      return this.props.data.data.items.map((val) => {
+         if (this.props.videoId === val.id.videoId) {
+            return (
+               <div className="video-detail">
+                  <iframe
+                     width="800"
+                     height="400"
+                     src={"https://www.youtube.com/embed/" + this.props.videoId}
+                     title="YouTube video player"
+                     frameborder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                     allowfullscreen
+                  ></iframe>
+                  <div className="videoDescription">
+                     <p className="videoDescription__title">
+                        {val.snippet.title}
+                     </p>
+                     <p className="videoDescription__description">
+                        {val.snippet.description}
+                     </p>
+                  </div>
+               </div>
+            );
+         }
+      });
    }
 }

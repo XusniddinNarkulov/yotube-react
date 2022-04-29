@@ -3,7 +3,7 @@
    justify-content: space-between;
    width: 90vw;
    padding: 1%;
-   height: auto;
+   /* height: auto; */
    max-height: 10vh;
    align-items: center;
 }
