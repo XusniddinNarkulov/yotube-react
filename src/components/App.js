@@ -5,6 +5,8 @@ import Search from "./Search";
 import VideoList from "./VIdeoList";
 import VideoDetail from "./VideoDetail";
 
+import Accordion from "./accordion";
+
 export default class App extends React.Component {
    constructor(props) {
       super(props);
@@ -49,6 +51,7 @@ export default class App extends React.Component {
                data={this.state.dataArr}
                videoIdFunc={this.getVideoId}
             />
+            <Accordion />
          </div>
       );
    }

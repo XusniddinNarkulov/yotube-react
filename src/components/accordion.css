@@ -1,0 +1,17 @@
+.container {
+   display: grid;
+   grid-template-columns: 1fr;
+   transition: 0.5s;
+}
+
+.child {
+   display: flex;
+   gap: 1%;
+   cursor: pointer;
+}
+.hidden {
+   visibility: hidden;
+}
+.visible {
+   visibility: visible;
+}
