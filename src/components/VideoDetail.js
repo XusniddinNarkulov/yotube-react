@@ -1,4 +1,5 @@
 import React from "react";
+import "./VideoDetail.css";
 
 export default class VideoDetail extends React.Component {
    constructor(props) {
@@ -8,7 +9,7 @@ export default class VideoDetail extends React.Component {
 
    render() {
       return (
-         <div style={{ display: "flex", justifyContent: "center" }}>
+         <div>
             <iframe
                width="560"
                height="315"

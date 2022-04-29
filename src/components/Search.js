@@ -1,6 +1,6 @@
 import { logDOM } from "@testing-library/react";
 import React from "react";
-import "./style.css";
+import "./Search.css";
 
 export default class Search extends React.Component {
    constructor(props) {
@@ -20,22 +20,30 @@ export default class Search extends React.Component {
 
    render() {
       return (
-         <form
-            onSubmit={this.formOnSubmit}
-            className="ui category search"
-            style={{ margin: "1% auto", width: "60%" }}
-         >
-            <div className="ui icon input" style={{ width: "100%" }}>
-               <input
-                  onChange={this.inputValue}
-                  className="prompt"
-                  type="text"
-                  placeholder="Search..."
-               />
-               <i className="search icon" style={{ cursor: "pointer" }}></i>
+         <div className="top-bar">
+            <div className="top-bar__left">
+               <i class="youtube icon"></i>
+               <b>YouTube</b>
             </div>
-            <div className="results"></div>
-         </form>
+            <form onSubmit={this.formOnSubmit} className="ui category search">
+               <div className="ui icon input">
+                  <input
+                     onChange={this.inputValue}
+                     className="prompt"
+                     type="text"
+                     placeholder="Search..."
+                  />
+                  <i className="search icon"></i>
+               </div>
+               <i class="microphone icon"></i>
+               <div className="results"></div>
+            </form>
+            <div className="top-bar__right">
+               <i class="video icon"></i>
+               <i class="th icon"></i>
+               <i class="bell outline icon"></i>
+            </div>
+         </div>
       );
    }
 }

@@ -1,9 +1,10 @@
 import React from "react";
-import "./style.css";
+// import "./App.css";
 import axios from "axios";
 import Search from "./Search";
 import VideoList from "./VIdeoList";
 import VideoDetail from "./VideoDetail";
+import LeftBar from "./LeftBar";
 
 import Accordion from "./accordion";
 
@@ -44,7 +45,17 @@ export default class App extends React.Component {
    render() {
       return (
          <div>
-            <Search getSearchVal={this.getData} />
+            <div
+               style={{
+                  display: "flex",
+                  position: "fixed",
+                  top: "0",
+                  left: "0",
+               }}
+            >
+               <LeftBar></LeftBar>
+               <Search getSearchVal={this.getData} />
+            </div>
 
             {this.showVideo()}
             <VideoList

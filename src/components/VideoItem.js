@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./VideoItem.css";
 
 export default class VideoItem extends React.Component {
    constructor(props) {
@@ -15,32 +15,14 @@ export default class VideoItem extends React.Component {
    render() {
       let snip = this.props.data.snippet;
       return (
-         <div
-            onClick={this.getIdClick}
-            className="item"
-            style={{
-               display: "grid",
-               gridTemplateRows: "1fr auto",
-               alignItems: "start",
-               justifyItems: "start",
-               cursor: "pointer",
-            }}
-         >
-            <img
-               className="videoImg"
-               src={snip.thumbnails.default.url}
-               style={{ width: "100%" }}
-            />
-            <div style={{ display: "flex" }}>
+         <div onClick={this.getIdClick} className="item">
+            <img className="videoImg" src={snip.thumbnails.default.url} />
+            <div>
                <img className="channelLogo" src="" />
-               <div style={{ padding: "5%" }}>
-                  <a className="videoTitle" style={{ color: "purple" }}>
-                     {snip.title}
-                  </a>
-                  <div style={{ lineHeight: "1.1" }}>
-                     <p className="channelName" style={{ fontSize: "1.4rem" }}>
-                        {snip.channelTitle}
-                     </p>
+               <div>
+                  <a className="videoTitle">{snip.title}</a>
+                  <div>
+                     <p className="channelName">{snip.channelTitle}</p>
                      {/* <p className="views">1000 views</p> */}
                      <p className="uploadTime">{snip.publishTime}</p>
                   </div>
